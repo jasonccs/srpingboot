@@ -11,14 +11,14 @@ import java.util.Map;
 
 @RestController
 //@Controller
-public class HelloController {
+public class HelloController  {
 
     @Autowired
     HelloService helloService;
 
     @GetMapping("/test")
     @ResponseBody
-    public Map<String,Object> index(@RequestParam int page, @RequestParam int limit) {
+    public Map<String,Object> index(@RequestParam(value = "page", required = false,defaultValue="0") int page, @RequestParam(value = "limit", required = false,defaultValue="10")  int limit) {
 
 
         List<Map> list = helloService.selectUserList();
