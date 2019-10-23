@@ -6,5 +6,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface HelloService {
-    List<Map> selectUserList();
+    List<Map> selectUserList(int start,int limit);
 }

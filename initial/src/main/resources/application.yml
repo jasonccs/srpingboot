@@ -10,3 +10,11 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+    serialization:
+      indent-output : true
+
+logging:
+  level:
+     cn.bld.enterprise.modules.sys.dao : debug
+
+
