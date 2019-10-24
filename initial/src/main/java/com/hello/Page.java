@@ -2,9 +2,10 @@ package com.hello;
 
 public class Page {
 
-    private int page;
+    private int page=1;
 
-    private int limit;
+    private int limit=10;
+
 
 
     public int getPage() {

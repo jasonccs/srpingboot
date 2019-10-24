@@ -21,7 +21,7 @@ public class HelloServiceImpl implements HelloService {
         params.put("start", start);
         params.put("limit", limit);
 
-        System.out.println(params);
+//        System.out.println(params);
         return userMapper.selectUserListMap(params);
     }
 }

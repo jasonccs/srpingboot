@@ -12,7 +12,6 @@
 
         select * from area  limit #{start},#{limit} ;
 
-
     </select>
 
 </mapper>

@@ -42,4 +42,28 @@ public class HelloController {
         return map;
     }
 
+//    @GetMapping("/test")
+//    @ResponseBody
+//    public Map<String, Object> index(@RequestParam(value = "page", required = false,defaultValue="0") int page, @RequestParam(value = "limit", required = false,defaultValue="10")  int limit) {
+//
+//
+//
+//        int start = ((page.getPage()<=1?1:page.getPage() )- 1) * page.getLimit();
+//
+//
+//        List<Map> list = helloService.selectUserList(start, page.getLimit());
+//
+//
+//        Map<String, Object> map = new HashMap<>();
+//        Map<String, Object> map1 = new HashMap<>();
+//        map1.put("total", page.getLimit());
+//        map1.put("pages", page.getPage());
+//        map1.put("list", list);
+//
+//        map.put("code", 0);
+//        map.put("msg", "百度");
+//        map.put("data", map1);
+//        return map;
+//    }
+
 }
