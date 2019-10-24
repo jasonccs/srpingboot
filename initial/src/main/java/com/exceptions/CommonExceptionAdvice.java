@@ -165,7 +165,7 @@ public class CommonExceptionAdvice extends CommonHandel {
     public Map<String, Object>  handleException(DataDoException e) {
         logger.error("操作数据库出现异常:", e);
 //        return "操作数据库出现异常：字段重复、有外键关联等";
-        return this.error(HttpStatus.INTERNAL_SERVER_ERROR.value(),"操作数据库出现异常");
+        return this.error(HttpStatus.INTERNAL_SERVER_ERROR.value(),"操作数据库出现异常：字段重复、有外键关联等");
     }
 
     /**
@@ -186,10 +186,11 @@ public class CommonExceptionAdvice extends CommonHandel {
      * @throws Exception
      */
     @ExceptionHandler(value = Exception.class)
-    public String defaultErrorHandler(Exception e) {
+    public Map<String, Object>  defaultErrorHandler(Exception e) {
         logger.error("Exception", e);
 
-        return "其它异常：" + e.getMessage();
+        return this.error(500,"Internal Server Error "+e.getMessage());
+
 
     }
 

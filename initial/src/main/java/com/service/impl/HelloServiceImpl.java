@@ -21,7 +21,12 @@ public class HelloServiceImpl implements HelloService {
         params.put("start", start);
         params.put("limit", limit);
 
-//        System.out.println(params);
+        Map<String, Object> result = new HashMap<>();
+        result.put("total", limit);
+        result.put("pages", Math.ceil((start-limit)/limit));
+        result.put("list",  userMapper.selectUserListMap(params));
+
+
         return userMapper.selectUserListMap(params);
     }
 }
