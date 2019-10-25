@@ -12,4 +12,11 @@ public interface UserMapper {
 
 
     List<Map> selectUserListMap(Map<String, Object> params);
+
+
+    int insertUser(Map<String, Object> params);
+
+    int deleteUser(Map<String, Object> params);
+
+    int updateUser(Map<String, Object> params);
 }

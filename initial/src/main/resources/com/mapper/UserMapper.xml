@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.UserMapper">
+
+
+
     <select id="selectUserList" parameterType="java.util.Map" resultType="map">
-
         select id from area  limit #{start},#{limit} ;
-
-
     </select>
+
+
 
     <select id="selectUserListMap" parameterType="java.util.Map" resultType="map">
-
         select * from area  limit #{start},#{limit} ;
-
     </select>
+
+
+
+
+    <insert id="insertUser" parameterType="java.util.Map">
+       INSERT INTO area (name, status) VALUE (#{name},#{status});
+    </insert>
+
+
+
+     <delete id="deleteUser" parameterType="java.util.Map">
+       DELETE FROM area WHERE  status=#{status} and `name` = #{name};
+    </delete>
+
+
+
+    <update id="updateUser" parameterType="java.util.Map">
+
+        UPDATE area SET `status`=#{status} ,
+        `name` = #{name}
+        WHERE id= 57
+
+    </update>
+
+
 
 </mapper>
